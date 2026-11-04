@@ -1,16 +1,49 @@
 # Machine Learning with scikit-learn
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-F7931E?logo=scikitlearn&logoColor=white)
+![Google Colab](https://img.shields.io/badge/Google%20Colab-ready-F9AB00?logo=googlecolab&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 **Instructor:** Shutchon Premchaisawatt
+*A master's degree course on applied machine learning — from raw data to an honest, working model.*
 
-A hands-on master's degree course that takes students from "some Python basics" to shipping an
-end-to-end machine learning project — using one consistent toolkit: **Google Colab + scikit-learn**.
+คอร์ส Machine Learning เชิงปฏิบัติสำหรับปริญญาโท: สไลด์ภาษาอังกฤษ · แล็บภาษาไทย · รันบน Google Colab ได้ทันที
 
-- **Slides:** English (intuition-first, light on derivations)
-- **Demo notebooks:** run-along with the slides (English section headers + Thai explanations)
-- **Exercise notebooks:** Thai, Google Colab-ready, with AI-assistant ("vibe coding") prompts
-- **Prerequisites:** basic Python (variables, loops, functions, some pandas). No math degree required.
+---
 
-## Course map — 8 sessions + project
+Every concept figure in this course is a **real fit computed from real data** — nothing is hand-drawn.
+Example: four classifiers, one dataset, four different geometries.
+
+![Four classifiers compared on breast cancer](assets/figures/img_boundaries.png)
+
+## ✨ What makes this course different
+
+- **Evaluation before models.** Students learn to measure honestly (train/test splits, cross-validation,
+  the right metric) in Session 04 — *before* meeting the model zoo in Sessions 05–06.
+- **Every number on every slide is real.** All figures, benchmark tables, and demo code are computed
+  and verified with scikit-learn runs (fixed `random_state`), so the slides match the notebook output exactly.
+- **Bilingual by design.** English slides + run-along demo notebooks (English headers, Thai explanations)
+  + Thai-language labs in Google Colab.
+- **AI-assistant ready.** Every lab ends with a *vibe coding corner*: a ready-to-use prompt for AI
+  assistants — plus the specific way they tend to fail on that topic, so students learn to verify, not trust.
+
+| | | |
+|:---:|:---:|:---:|
+| ![Overfitting](assets/figures/img_overfit.png) | ![KNN regions](assets/figures/img_knn_boundary.png) | ![DBSCAN](assets/figures/img_dbscan.png) |
+| under · right · over fit | what KNN really learns | density-based clustering |
+
+## 🚀 Quick start (students)
+
+1. Download a lab notebook from [`excercises/`](excercises/) (or clone this repository)
+2. Open [colab.research.google.com](https://colab.research.google.com) → **File → Upload notebook**
+3. **File → Save a copy in Drive** so your work is kept
+4. Run cells top-to-bottom with `Shift+Enter`
+
+Everything (`scikit-learn`, `pandas`, `seaborn`, `matplotlib`) is pre-installed in Colab —
+no setup, no `pip install`. All datasets load automatically.
+
+## 🧭 Course map — 8 sessions + final project
 
 | # | Session (slides) | Demo notebook | Lab (Thai) | Solution |
 |---|---|---|---|---|
@@ -24,53 +57,30 @@ end-to-end machine learning project — using one consistent toolkit: **Google C
 | 07 | [Unsupervised + Tuning](slides/07%20Unsupervised%20Learning%20and%20Hyperparameter%20Tuning.pdf) | [wine clusters + PCA + search](demos/07.clustering_tuning_demo.ipynb) | [Lab 07](excercises/07.clustering_tuning_exercise.ipynb) | [✅](excercises/solutions/07.clustering_tuning_solution.ipynb) |
 | 08 | [Final Project: Churn](slides/08%20Final%20Project%20Customer%20Churn%20Prediction.pdf) | [instructor walkthrough](demos/08.final_project_demo.ipynb) | [🚀 starter](excercises/08.final_project_starter.ipynb) | [✅](excercises/solutions/08.final_project_solution.ipynb) |
 
-Editable `.pptx` sources for every deck live in [`slides/`](slides/) next to the PDFs.
+Each session (~2.5–3 h): **slides** (~60 min) → **demo notebook** (same code as the slides, runnable)
+→ **lab** (~60 min, Thai, with hints and a challenge problem). Editable `.pptx` sources are in
+[`slides/`](slides/) next to the PDFs.
 
-## How each session works (~2.5–3 h)
-
-1. **Slides (~60 min)** — concepts in English, every number on them computed from real runs
-2. **Demo notebook** — the exact slide code, runnable; section headers match slide numbers
-3. **Lab (~60 min)** — Thai exercises in Colab: `# TODO` cells, hints, a challenge problem,
-   and a "vibe coding corner" showing how to prompt AI assistants *and* verify their output
-
-## Using the notebooks in Google Colab
-
-1. Download the `.ipynb` file (or clone this repository)
-2. Go to [colab.research.google.com](https://colab.research.google.com) → **File → Upload notebook**
-3. **File → Save a copy in Drive** so your work is kept
-4. Run cells top-to-bottom with `Shift+Enter`
-
-Everything needed (`scikit-learn`, `pandas`, `seaborn`, `matplotlib`) is pre-installed in Colab —
-no `pip install` required. All datasets load automatically (sklearn built-ins, seaborn, or a public URL).
-
-## Datasets
+## 📊 Datasets — all load automatically
 
 | Dataset | Used in | Loads via |
 |---|---|---|
 | Iris, Wine, Breast Cancer, Diabetes | S01, S04, S06, S07 | `sklearn.datasets` (offline) |
 | California Housing | S05 | `sklearn.datasets` (auto-download) |
 | Titanic | S02, S03 | `seaborn.load_dataset` |
-| Telco Customer Churn (7,043 × 19) | S08 project | public IBM GitHub URL (starter has a synthetic fallback) |
+| Telco Customer Churn (7,043 × 19) | S08 project | public IBM GitHub URL (starter includes a synthetic fallback) |
 
-## The evaluation-first curriculum
-
-Most courses teach models first and evaluation last. This course deliberately teaches
-**how to measure honestly (Session 04) before opening the model zoo (Sessions 05–06)** —
-students compare every model against a `DummyClassifier` baseline, on the same stratified folds,
-with the metric that matches the business question, and touch the test set exactly once.
-
-## AI-assistant ("vibe coding") policy
+## 🤖 AI-assistant ("vibe coding") policy
 
 AI assistants are allowed **everywhere** — labs and the final project included — with two rules:
 
 1. You must be able to explain every line you submit
 2. Attach the prompts you used at the end of your notebook
 
-Every lab ends with a *vibe coding corner*: a ready-to-use prompt plus the specific way an AI
-assistant tends to fail on that topic (invented APIs, silent leakage, accuracy-worship on
-imbalanced data).
+Every lab's *vibe coding corner* shows a good prompt **and** the failure mode to watch for on that
+topic: invented APIs, silent data leakage, or accuracy-worship on imbalanced data.
 
-## Assessment
+## 📝 Assessment
 
 | Component | Weight | Notes |
 |---|---|---|
@@ -78,17 +88,21 @@ imbalanced data).
 | Final project | 40% | clean pipeline · honest evaluation · insight · 5-min talk (rubric in S08) |
 | Participation | 20% | running demos along, asking questions |
 
-## Repository layout
+No points for the highest leaderboard score — points for the cleanest, most honest, most actionable project.
+
+## 📁 Repository layout
 
 ```
 ├── slides/            00–08 as .pptx (editable) + .pdf (distribute)
 ├── demos/             run-along notebooks for lecture use
 ├── assets/figures/    matplotlib concept figures embedded in the decks
 │                      (overfitting, decision regions, KMeans, DBSCAN, PCA, …)
-└── excercises/        Thai lab notebooks (students)
-    └── solutions/     worked solutions (instructor)
+├── excercises/        Thai lab notebooks (students)
+│   └── solutions/     worked solutions (instructors)
+├── LICENSE            MIT
+└── README.md
 ```
 
-## License
+## 📄 License
 
-MIT — use, adapt, and redistribute freely for teaching.
+Released under the [MIT License](LICENSE) — use, adapt, and redistribute freely for teaching.
